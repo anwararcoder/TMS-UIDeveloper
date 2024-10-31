@@ -1,0 +1,7 @@
+.dashboard{
+    @include prefix(display, flex, webkit moz ms o);
+    height: 100vh;
+    overflow: hidden;
+    @import "sections/sidebar";
+    @import "sections/contentArea";
+}

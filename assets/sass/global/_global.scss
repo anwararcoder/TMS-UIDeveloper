@@ -1,0 +1,93 @@
+/*-------------------------- 
+      Global Styles
+---------------------------*/
+* {
+    @include prefix(transition, all 0.5s ease, webkit moz ms o);
+    outline: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $bodyFont;
+    font-size: $bodyFontSize;
+    line-height: $bodyLineHeight;
+    color: $bodyColor;
+}
+
+::-moz-selection {
+    background-color: $mainColor;
+    color: $whiteColor;
+    text-shadow: none;
+}
+
+::selection {
+    background-color: $mainColor;
+    color: $whiteColor;
+    text-shadow: none;
+}
+
+/* :: All Transition */
+* {
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    outline: none;
+}
+
+/* :: Scrollbar Width */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* :: Scrollbar Track */
+::-webkit-scrollbar-track {
+    background: $grayColor;
+}
+
+/* :: Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+    background: $mainColor;
+    border-radius: 10px;
+}
+
+/* :: Scrollbar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #08306A;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    &:hover {
+        color: $secColor;
+        text-decoration: none;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+button,
+button:focus,
+.form-control,
+.form-control:focus {
+    outline: none;
+    @include prefix(box-shadow, none, webkit moz ms o);
+}

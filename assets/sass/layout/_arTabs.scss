@@ -1,0 +1,234 @@
+.tab-container {
+  padding: 16px;
+  margin-top: 16px;
+  background-color: $whiteColor;
+  border-radius: 16px;
+  min-height: 700px;
+  position: relative;
+  .ar-tabs {
+    background: #f7f9fb;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    margin-bottom: 10px;
+    .tab {
+      width: 100%;
+      text-align: center;
+      color: #5e6778;
+      line-height: 27px;
+      border-radius: 100px;
+      cursor: pointer;
+
+      &.active,
+      &:hover {
+        background-color: #e6f2f8;
+        color: #036da3;
+      }
+    }
+  }
+
+  .ar-box-content {
+    min-height: inherit;
+    &.tab-hide {
+      display: none;
+    }
+  }
+}
+.comments {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+  max-height: 700px;
+  overflow-y: auto;
+  .comments-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    li{
+      max-width: 95%;
+      .text-box{
+        background-color: #E6F2F8;
+        border-radius: 8px;
+        padding: 16px;
+        .name{
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          line-height: 21px;
+          margin-bottom: 5px;
+          color: #064E86;
+        }
+        p{
+          font-size: 14px;
+          line-height: 16px;
+          color: #08306A;
+        }
+        .replay{
+          background-color: #F8FCFD;
+          padding: 16px;
+          border-radius: 8px;
+          margin-bottom: 5px;
+        }
+      }
+      
+
+
+      &.right{
+        margin-left: auto;
+        .time{
+          display: block;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+  .comments-form {
+    position: relative;
+    padding: 8px;
+    background-color: #f7f9fb;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .tools{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      input{
+        border: none;
+        font-size: 14px;
+        background: transparent;
+      }
+    }
+    .send {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #08306a;
+      border: 2px solid #08306a;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      svg {
+        fill: $whiteColor;
+      }
+
+      &:hover {
+        background-color: transparent;
+        svg {
+          fill: #08306a;
+        }
+      }
+    }
+  }
+}
+
+
+.emoji-box{
+  
+
+  button{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF;
+
+    svg{
+      &:last-of-type{
+        display: none;
+      }
+    }
+
+    &.active{
+      background-color: #D5D7DB;
+
+      svg{
+        &:first-of-type{
+          display: none;
+        }
+        &:last-of-type{
+          display: block;
+        }
+      }
+    }
+  }
+
+  .dropdown-menu{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    background: #F3F9FF;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+
+    &.active{
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .list-emoji{
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      li{
+        cursor: pointer;
+        svg{
+          fill: #036DA3;
+        }
+      }
+    }
+  }
+}
+
+.at-box{
+  line-height: 1;
+  button{
+    width: auto;
+    height: auto;
+    background: transparent;
+    svg{
+      display: block !important;
+    }
+    &.active{
+      background-color: transparent;
+    }
+  }
+
+  .list-user{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+    li{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #036DA3;
+      cursor: pointer;
+    }
+  }
+}

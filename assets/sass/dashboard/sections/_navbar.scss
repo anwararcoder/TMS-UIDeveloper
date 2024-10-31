@@ -1,0 +1,79 @@
+.content-area.active{
+  .navbar{
+    .logo{
+      a{
+        img:first-of-type {
+          display: block;
+        }
+        img:last-of-type {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 15px;
+
+  .content {
+    @include prefix(display, flex, webkit moz ms o);
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    .logo {
+      @include prefix(display, flex, webkit moz ms o);
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+
+      a {
+        display: block;
+
+        img{
+          display: none;
+        }
+
+
+        @include lg-screens {
+        img:first-of-type {
+          display: block;
+        }
+        img:last-of-type {
+          display: none;
+        }
+        }
+        @include sm-screens {
+          display: block;
+
+          img:first-of-type {
+            display: none;
+          }
+          img:last-of-type {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .tools {
+      @include prefix(display, flex, webkit moz ms o);
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      @include sm-screens {
+        gap: 15px;
+      }
+    }
+  }
+
+  &.active{
+    background-image: url("../../assets/images/bg.png");
+    background-color: #F7F9FB ;
+  }
+}

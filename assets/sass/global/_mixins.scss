@@ -1,0 +1,85 @@
+//  Sass Mixins
+
+// Media Query Mixins
+@mixin xxl-screens {
+  @media (max-width: 1399px) {
+    @content;
+  }
+}
+@mixin xl-screens {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+@mixin lg-screens {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+@mixin md-screens {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin sm-screens {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+
+// Animation Mixin
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+// Add prefixes before CSS3 Elements
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+
+  #{$property}: $value;
+}
+
+/* Mixin for margin */
+@mixin margin-helper($dir, $side, $values...) {
+  @each $value in $values {
+    .m#{$dir}-#{$value} {
+      margin-#{$side}: #{$value}px;
+    }
+  }
+}
+
+/* Mixin for padding */
+@mixin padding-helper($dir, $side, $values...) {
+  @each $value in $values {
+    .p#{$dir}-#{$value} {
+      padding-#{$side}: #{$value}px;
+    }
+  }
+}

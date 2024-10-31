@@ -1,0 +1,75 @@
+$columns: 12;
+$gutter: 15px;
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+@mixin respond-to($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+  @if $size != null {
+    @media (min-width: #{$size}) {
+      @content;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  padding-right: $gutter;
+  padding-left: $gutter;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include respond-to(md) {
+    max-width: 720px;
+  }
+
+  @include respond-to(lg) {
+    max-width: 960px;
+  }
+
+  @include respond-to(xl) {
+    max-width: 1140px;
+  }
+
+  @include respond-to(xxl) {
+    max-width: 1320px;
+  }
+}
+
+.row {
+  @include prefix(display, flex, webkit moz ms o);
+  flex-wrap: wrap;
+  width: 100%;
+  
+}
+
+@mixin make-col($size) {
+  width: percentage($size / $columns);
+}
+
+.col {
+  flex: 1 0 0%;
+
+  @for $i from 1 through $columns {
+    &-#{$i} {
+      @include make-col($i);
+    }
+  }
+}
+
+@each $breakpoint, $value in $breakpoints {
+  @for $i from 1 through $columns {
+    .col-#{$breakpoint}-#{$i} {
+      @include respond-to($breakpoint) {
+        @include make-col($i);
+      }
+    }
+  }
+}

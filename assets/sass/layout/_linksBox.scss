@@ -1,0 +1,72 @@
+.links-box{
+    .link{
+        .link-href{
+            @include prefix(display, flex, webkit moz ms o);
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            height: 45px;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-size: 14px;
+            font-weight: 600;
+            color: $bodyColor;
+            background-color: rgba(240, 243, 245, 0.25);
+            &:hover{
+                color: $mainColor;
+            }
+            i{
+                width: 35px;
+                height: 35px;
+                @include prefix(display, flex, webkit moz ms o);
+                align-items: center;
+                justify-content: center;
+                background-color: $whiteColor;
+                border-radius: 8px;
+                &.last{
+                    display: none;
+                }
+            }
+
+        }
+        &.open{
+            .link-href i.first{
+                display: none;
+            }
+            .link-href i.last{
+                @include prefix(display, flex, webkit moz ms o);
+            }
+        }
+        .sub-links{
+            height: 0;
+            opacity: 0;
+            overflow-y: hidden;
+            @include prefix(transition, all 0.5s ease, webkit moz ms o);
+            &.open{
+                height: max-content;
+                opacity: 1;
+                @include prefix(transition, all 0.5s ease, webkit moz ms o);
+            }
+            li{
+                .sub-link-item{
+                    height: 45px;
+                    @include prefix(display, flex, webkit moz ms o);
+                    align-items: center;
+                    justify-content:space-between;
+                    background-color: transparent;
+                    border-left: 4px solid transparent;
+                    padding: 0 30px;
+                    color: $secColor;
+                    font-weight: 700;
+                    line-height: 1;
+                    &.active,
+                    &:hover{
+                        background-color: $mainColor;
+                        border-left: 4px solid #064e86;
+                        color: #e6f2f8;
+                    }
+                }
+            }
+        }
+    }
+}

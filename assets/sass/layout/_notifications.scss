@@ -1,0 +1,50 @@
+.notification-list {
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    ul{
+        margin: 16px 8px 0 8px;
+        @include prefix(display, flex, webkit moz ms o);
+        flex-direction: column;
+        gap: 8px;
+        li {
+          background-color: #e6f2f8;
+          border-radius: 16px;
+          padding: 8px;
+          @include prefix(display, flex, webkit moz ms o);
+          gap: 20px;
+          align-items: start;
+          justify-content: space-between;
+      
+          .text {
+            h2 {
+              font-size: 12px;
+              line-height: 24px;
+              color: $bodyColor;
+              span {
+                color: $mainColor;
+                font-weight: 500;
+              }
+            }
+      
+            .description {
+              color: #5e6778;
+            }
+      
+            .date {
+              font-weight: 300;
+            }
+          }
+      
+          .time {
+            width: max-content;
+            display: block;
+            font-size: 12px;
+            line-height: 24px;
+      
+            &.dark {
+              color: $bodyColor;
+            }
+          }
+        }
+    }
+}
